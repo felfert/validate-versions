@@ -22,7 +22,7 @@ function readVersion(file) {
 }
 
 try {
-  var version = = core.getInput('refname');
+  var version = core.getInput('refname');
   const reftype = core.getInput('reftype');
   const tomls = core.getInput('tomls');
   if (reftype == 'tag') {
@@ -40,7 +40,6 @@ try {
       validateSemver(tversion);
       if (tversion != version) {
           core.setFailed(`Version ${tversion} in ${f} is different than ${version}`);
-          break;
       }
   });
 } catch (error) {
